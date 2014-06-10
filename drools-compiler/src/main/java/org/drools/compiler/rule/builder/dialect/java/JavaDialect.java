@@ -391,6 +391,7 @@ public class JavaDialect
      */
     public void compileAll() {
         if ( this.generatedClassList.isEmpty() ) {
+            this.errorHandlers.clear();
             return;
         }
         final String[] classes = new String[this.generatedClassList.size()];
@@ -426,6 +427,7 @@ public class JavaDialect
 
         // We've compiled everthing, so clear it for the next set of additions
         this.generatedClassList.clear();
+        this.errorHandlers.clear();
     }
 
     /**
